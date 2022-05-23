@@ -537,7 +537,8 @@ class MainView(ui.View):
                 except:
                    self.app_console.text = 'Your test from ' + dt + ' could not be processed.'
                    time.sleep(2)
-                    
+                   shutil.move(source_path + file, self.cwd +'/data_files/processed_files/' + file)
+   
             else:
                    continue
             time.sleep(1)
