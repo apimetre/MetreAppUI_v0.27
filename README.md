@@ -11,6 +11,6 @@
 
 5) If multiple files are present in temp_resources, multiple files will be uploaded.
 
-## Updates from v0.25:
+## Updates from v0.26:
 
 1) Added by Try-Except
