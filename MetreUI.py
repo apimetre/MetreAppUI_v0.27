@@ -1,4 +1,4 @@
-DEBUG = False
+DEBUG = True
 # REMOVE TRY-EXCEPT
 ## Python imports
 import os
@@ -501,6 +501,8 @@ class MainView(ui.View):
                    response_json = json.loads(response.text)
                    pt.join()
                    process_done = True
+                   if DEBUG:
+                        print(response_json)
                    if response_json['EtOH_flag_string'] == "Ethanol detected":
                         et = self.EtohConsole(self.v, show_ac, dt)
                         et.etoh_alert()
