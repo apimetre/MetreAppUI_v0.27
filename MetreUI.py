@@ -424,7 +424,7 @@ class MainView(ui.View):
         process_done = False
         
         def animate_bar():
-            for i in range(0, 300):
+            for i in range(0, 3000):
                 if process_done:
                     break
                 ui.animate(self.blink, 0.1)
@@ -471,7 +471,7 @@ class MainView(ui.View):
         show_ac = True
         for file in files:
             if fnmatch.fnmatch(file, '*.json'):
-                try:
+                #try:
                    show_ac = True                
                    dt = datetime.datetime.fromtimestamp(int(file.split('-')[0])).astimezone(timezone(tz)).strftime('%b %d, %Y, %I:%M %p')
                    ui.animate(self.blink, 0.1)
@@ -536,10 +536,10 @@ class MainView(ui.View):
                           #self.app_console.text = 'The test from ' + dt + ' could not be processed.'
                           #time.sleep(2)
                    shutil.move(source_path + file, self.cwd +'/data_files/processed_files/' + file)
-                except:
-                   self.app_console.text = 'Your test from ' + dt + ' could not be processed.'
-                   time.sleep(2)
-                   shutil.move(source_path + file, self.cwd +'/data_files/processed_files/' + file)
+                #except:
+                #   self.app_console.text = 'Your test from ' + dt + ' could not be processed.'
+                #   time.sleep(2)
+                #   shutil.move(source_path + file, self.cwd +'/data_files/processed_files/' + file)
    
             else:
                    continue
